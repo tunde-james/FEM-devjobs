@@ -1,11 +1,17 @@
-import Button from "./components/ui/button";
-import Navbar from "./Navbar";
+import Input from "./components/ui/input";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
-      <Button variant="dark">Click Me</Button>
+      <div className="-mt-10 px-6">
+        <Input
+          type="text"
+          placeholder="Filter by title…"
+          className="rounded-md"
+        />
+
+        
+      </div>
     </div>
   );
 }

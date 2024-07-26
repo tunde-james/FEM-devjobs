@@ -3,60 +3,59 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: white;
+  --text: black;
 
-  /* Primary Colors */
-  --base-violet: 235 69% 61%;
-  --base-violet2: 235 82% 77%;
-  --base-violet-light: 235, 69%, 96%;
-  --base-violet2-light: 235, 69%, 84%;
-  --base-dark: 219 29% 14%;
-  --base-midnight: 219 29% 10%
+  /* colors */
+  --color-violet-normal: 235 69% 61%;
+  --color-violet-light: 235 82% 77%;
+  --color-blue-dark: 219 29% 14%;
+  --color-midnight: 219 29% 10% --color-grey-normal: 212 23% 69%;
+  --color-grey-light: 217 26% --color-grey-dark: 214 17% 51%;
+  --color-violet-light1: 235 69% 96%;
+  --color-violet-light2: 235 69% 84%;
 
-  /* Secondary Colors */
-  --light-grey: 217 26% 97%;
-  --gray: 212 23% 69%;
-  --dark-gray: 214 17% 51%;
+  /* animation */
+  --animation-curve: cubic-bezier(0.34, 1.36, 0.2, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --bg: black;
+    --text: white;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
 }
 
 @layer base {
   h1 {
-    @apply font-bold text-[1.75rem] leading-[34.73px];
+    @apply text-[1.75rem] font-bold leading-[34.73px];
   }
 
   h2 {
-    @apply font-bold text-2xl
+    @apply text-2xl font-bold;
   }
 
-  
   h3 {
-    @apply font-bold text-xl
+    @apply text-xl font-bold;
   }
 
-  
   h4 {
-    @apply font-bold text-sm
+    @apply text-sm font-bold;
   }
-  
-  
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  #switch:checked ~ label {
+    transform: translatex(23px) rotatez(360deg);
+  }
+
+  #switch ~ label {
+    transition: all 0.5s var(--animation-curve);
   }
 }
