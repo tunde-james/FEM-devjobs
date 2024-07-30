@@ -9,12 +9,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   ref,
 ) {
   return (
-    <input
-      type={type}
-      className={cn("h-20 w-[327px]", className)}
-      ref={ref}
-      {...props}
-    />
+    <input type={type} className={cn("", className)} ref={ref} {...props} />
   );
 });
 

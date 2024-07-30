@@ -6,7 +6,7 @@ type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "dark";
 };
 
-function button({ className, variant, ...props }: ButtonProps) {
+function Button({ className, variant, ...props }: ButtonProps) {
   return (
     <button {...props} className={cn(buttonVariants({ variant }), className)} />
   );
@@ -15,7 +15,7 @@ function button({ className, variant, ...props }: ButtonProps) {
 const buttonVariants = cva("py-[15px] px-10 rounded-md", {
   variants: {
     variant: {
-      primary: "bg-base-violet text-white hover:bg-base-violet2",
+      primary: "bg-violet-normal text-white hover:bg-violet-light",
       secondary:
         "bg-base-violet-light text-base-violet hover:bg-base-violet2-light",
       dark: "bg-base-dark text-white hover:bg-dark-gray",
@@ -26,4 +26,4 @@ const buttonVariants = cva("py-[15px] px-10 rounded-md", {
   },
 });
 
-export default button;
+export default Button;

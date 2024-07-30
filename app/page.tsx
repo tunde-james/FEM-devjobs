@@ -1,17 +1,9 @@
-import Input from "./components/ui/input";
+// import FilterForm from "./components/filter-form";
 
-export default function Home() {
-  return (
-    <div>
-      <div className="-mt-10 px-6">
-        <Input
-          type="text"
-          placeholder="Filter by title…"
-          className="rounded-md"
-        />
-
-        
-      </div>
-    </div>
-  );
-}
+// export default function Home() {
+//   return (
+//     <div className="">
+//       <FilterForm />
+//     </div>
+//   );
+// }

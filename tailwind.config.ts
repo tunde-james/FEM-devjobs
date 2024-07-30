@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      phone: "540px",
+      phone: "320px",
       tablet: "720px",
       laptop: "920px",
       desktop: "1040px",
+    },
+    container: {
+      padding: {
+        phone: "24px",
+        tablet: "40px",
+        laptop: "165px",
+        desktop: "",
+      },
     },
     extend: {
       colors: {

@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kumbh_sans.className}>
-        <Navbar />
-        <main className="color-scheme-wrapper">{children}</main>
+        <div className="flex min-h-full flex-col bg-red-300">
+          <Navbar />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
