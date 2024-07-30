@@ -5,7 +5,7 @@ import Image from "next/image";
 function Navbar() {
   return (
     <nav className="bg-[url('/images/mobile/bg-pattern-header.svg')] bg-cover bg-no-repeat tablet:bg-[url('/images/tablet/bg-pattern-header.svg')] laptop:bg-[url('/images/desktop/bg-pattern-header.svg')]">
-      <div className="mx-auto flex h-[136px] items-center justify-between pb-10 phone:container tablet:container laptop:container tablet:h-[165px]">
+      <div className="container flex h-[136px] items-center justify-between pb-10 phone:w-[327px] tablet:h-[165px] tablet:w-[689px] desktop:w-[1110px]">
         <h1 className="text-white">devjobs</h1>
         <div className="flex justify-between">
           <Image

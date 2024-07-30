@@ -5,7 +5,7 @@ import Button from "./ui/button";
 
 function LargeScreenFilterForm() {
   return (
-    <div className="mx-auto -mt-10 flex h-20 items-center rounded-md bg-white pl-6 pr-4 tablet:w-[689px] laptop:w-[789px] desktop:w-[1000px]">
+    <div className="container -mt-10 flex h-20 items-center rounded-md bg-white pl-6 pr-4 tablet:w-[689px] desktop:w-[1110px]">
       <div className="flex grow gap-4 tablet:w-[147px]">
         <Image
           src="/images/icons/icon-search.svg"

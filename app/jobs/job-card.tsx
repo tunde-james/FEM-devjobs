@@ -21,7 +21,7 @@ function JobCard({
   location,
 }: Props) {
   return (
-    <div className="mb-[49px] rounded-md bg-white px-8 pb-8 phone:w-[327px]">
+    <div className="mb-[49px] rounded-md bg-white px-8 pb-8 phone:w-[327px] tablet:w-[339px] desktop:w-[330px]">
       <div
         style={{ backgroundColor: logoBg }}
         className="relative -top-[25px] flex h-[50px] w-[50px] items-center justify-center rounded-2xl"

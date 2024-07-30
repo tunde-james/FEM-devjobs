@@ -14,29 +14,31 @@ function MobileFilterForm() {
   }
 
   return (
-    <div className="mx-auto -mt-8 flex h-20 w-[327px] items-center rounded-md bg-white px-6 pr-4">
-      <JobModalFilter isOpen={isJobModalFilterOpen} />
+    <div className="container -mt-8 flex h-20 w-[327px] items-center rounded-md bg-white px-6">
+      <div className="flex items-center">
+        <JobModalFilter isOpen={isJobModalFilterOpen} />
 
-      <Input type="text" placeholder="Filter by title ..." />
+        <Input type="text" placeholder="Filter by title ..." />
 
-      <Image
-        src="/images/icons/icon-filter.svg"
-        alt="Filter icon"
-        width={20}
-        height={20}
-        onClick={openJobModalFilter}
-        className="self-center"
-      />
-
-      <Button className="ml-6 p-4">
         <Image
-          src="/images/icons/icon-search-white.svg"
-          alt="Search icon"
+          src="/images/icons/icon-filter.svg"
+          alt="Filter icon"
           width={20}
           height={20}
+          onClick={openJobModalFilter}
           className="self-center"
         />
-      </Button>
+
+        <Button className="ml-6 p-4">
+          <Image
+            src="/images/icons/icon-search-white.svg"
+            alt="Search icon"
+            width={20}
+            height={20}
+            className="self-center"
+          />
+        </Button>
+      </div>
     </div>
   );
 }

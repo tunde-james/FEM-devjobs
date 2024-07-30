@@ -3,7 +3,7 @@ import jobs from "../../data.json";
 
 function JobList() {
   return (
-    <div className="flex flex-col tablet:flex-row tablet:flex-wrap">
+    <div className="container grid grid-cols-1 tablet:w-[689px] tablet:grid-cols-2 tablet:gap-3 desktop:w-[1110px] desktop:grid-cols-3">
       {jobs.map((job) => (
         <JobCard
           key={job.id}

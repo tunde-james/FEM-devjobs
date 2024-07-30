@@ -13,14 +13,6 @@ const config: Config = {
       laptop: "920px",
       desktop: "1040px",
     },
-    container: {
-      padding: {
-        phone: "24px",
-        tablet: "40px",
-        laptop: "165px",
-        desktop: "",
-      },
-    },
     extend: {
       colors: {
         "violet-normal": "hsl(var(--color-violet-normal))",
