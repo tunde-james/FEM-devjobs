@@ -10,10 +10,11 @@
   --color-violet-normal: 235 69% 61%;
   --color-violet-light: 235 82% 77%;
   --color-blue-dark: 219 29% 14%;
-  --color-midnight: 219 29% 10% --color-grey-normal: 212 23% 69%;
+  --color-midnight: 219 29% 10%;
+  --color-grey-normal: 212 23% 69%;
   --color-grey-light: 217 26% 97%;
   --color-grey-dark: 214 17% 51%;
-  --color-violet-light1: 235 69% 96%;
+  --color-violet-accent: 235 69% 96%;
   --color-violet-light2: 235 69% 84%;
 
   /* animation */

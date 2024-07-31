@@ -46,7 +46,7 @@ function JobModalFilter({ isOpen, onSubmit }: Props) {
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen}>
-      <div className="">
+      <div className="mx-auto flex w-[327px] flex-col rounded-md bg-white p-6">
         <div className="flex">
           <Image
             src="/images/icons/icon-location.svg"
@@ -55,11 +55,13 @@ function JobModalFilter({ isOpen, onSubmit }: Props) {
             height={24}
             className="mr-4 self-center"
           />
+
+          <Input type="text" placeholder="Filter by location ..." />
         </div>
 
-        <div className="divide-y"></div>
+        <div className="border-b border-grey-dark pt-6"></div>
 
-        <div className="flex items-center">
+        <div className="flex items-center pt-6">
           <Input type="checkbox" className="h-6 w-6" />
           <Label className="capitalise ml-4 font-bold">full time only</Label>
         </div>

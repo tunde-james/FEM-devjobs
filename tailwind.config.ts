@@ -17,6 +17,7 @@ const config: Config = {
       colors: {
         "violet-normal": "hsl(var(--color-violet-normal))",
         "violet-light": "hsl(var(--color-violet-light))",
+        "violet-accent": "hsl(var(--color-violet-accent))",
         "blue-dark": "hsl(var(--color-blue-dark))",
         midnight: "hsl(var(--color-midnight))",
         "grey-normal": "hsl(var(--color-grey-normal))",

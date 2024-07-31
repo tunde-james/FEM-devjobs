@@ -1,11 +1,11 @@
 import FilterForm from "./components/filter-form";
-import JobList from "./jobs/job-list";
+import JobListPage from "./jobs/page";
 
 export default function Home() {
   return (
     <div className="">
       <FilterForm />
-      <JobList />
+      <JobListPage />
     </div>
   );
 }
