@@ -1,5 +1,4 @@
 import JobCard from "./job-card";
-// import jobs from "../../data.json";
 import { promises as fs } from "fs";
 
 async function JobList() {

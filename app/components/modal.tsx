@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import Input from "./ui/input";
 
 interface Props {
   isOpen: boolean;

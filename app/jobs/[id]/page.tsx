@@ -1,9 +1,3 @@
-import Image from "next/image";
-import { promises as fs } from "fs";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import Button from "@/app/components/ui/button";
-import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import JobDetailClient from "./job-detail-client";
 
 interface Params {
