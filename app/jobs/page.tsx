@@ -1,7 +1,11 @@
-import JobList from "./job-list";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 function JobListPage() {
-  return <JobList />;
+  const router = useRouter();
+
+  router.push("/");
 }
 
 export default JobListPage;

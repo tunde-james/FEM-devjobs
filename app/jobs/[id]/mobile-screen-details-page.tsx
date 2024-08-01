@@ -1,21 +1,15 @@
 import Image from "next/image";
-import { promises as fs } from "fs";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Button from "@/app/components/ui/button";
+import { Job } from "../job-list";
 
 interface Props {
   params: { id: string };
+  jobData: Job[];
 }
 
-async function MobileScreenDetailsPage({ params: { id } }: Props) {
-  const data = await fs.readFile(process.cwd() + "/app/data.json", "utf8");
-  const jobs = JSON.parse(data);
-
-  const job = jobs.find((item: { id: number }) => item.id === Number(id));
-
-  if (!job) notFound();
-
+async function MobileScreenDetailsPage({ params: { id }, jobData }: Props) {
   return (
     <>
       <div className="container phone:w-[327px]">

@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { promises as fs } from "fs";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import Button from "@/app/components/ui/button";
 
@@ -9,13 +7,6 @@ interface Props {
 }
 
 async function WideScreenDetailsPage({ params: { id } }: Props) {
-  const data = await fs.readFile(process.cwd() + "/app/data.json", "utf8");
-  const jobs = JSON.parse(data);
-
-  const job = jobs.find((item: { id: number }) => item.id === Number(id));
-
-  if (!job) notFound();
-
   return (
     <>
       <div>
