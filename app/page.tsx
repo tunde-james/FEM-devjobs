@@ -20,9 +20,13 @@ export default function Home() {
     }
 
     const filtered = jobs.filter((job) => {
-      const matchesTitle = job.company
+      const matchesCompany = job.company
         .toLowerCase()
         .includes(title.toLowerCase());
+
+      const matchesTitle =
+        job.company.toLowerCase().includes(title.toLowerCase()) &&
+        !matchesCompany;
 
       const matchesLocation = job.location
         .toLowerCase()
@@ -30,7 +34,9 @@ export default function Home() {
 
       const matchesFullTime = fullTime ? job.contract === "Full Time" : true;
 
-      return matchesTitle && matchesLocation && matchesFullTime;
+      return (
+        (matchesCompany || matchesTitle) && matchesLocation && matchesFullTime
+      );
     });
 
     setFilterJobs(filtered);
@@ -39,7 +45,7 @@ export default function Home() {
   return (
     <div className="">
       <FilterForm handleFilter={handleFilterJobs} filterJobs={filterJobs} />
-      <JobList />
+      <JobList jobs={filterJobs.length > 0 ? filterJobs : jobs} />
     </div>
   );
 }

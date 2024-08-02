@@ -8,12 +8,12 @@ import Input from "./ui/input";
 import { FilterFormData } from "./filter-form";
 
 export interface SmallScreenFilterFormProps {
-  formData: FilterFormData;
+  filterJobData: FilterFormData;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
 }
 
-function MobileFilterForm({ formData, onChange, checked }: SmallScreenFilterFormProps) {
+function MobileFilterForm({ filterJobData, onChange, checked }: SmallScreenFilterFormProps) {
   const [isJobModalFilterOpen, setJobModalFilter] = useState(false);
 
   function openJobModalFilter() {
@@ -25,7 +25,7 @@ function MobileFilterForm({ formData, onChange, checked }: SmallScreenFilterForm
       <div className="flex items-center">
         <JobModalFilter
           isOpen={isJobModalFilterOpen}
-          formData={formData}
+          filterJobData={filterJobData}
           onChange={onChange}
           checked={checked}
         />
@@ -33,7 +33,7 @@ function MobileFilterForm({ formData, onChange, checked }: SmallScreenFilterForm
         <Input
           type="text"
           name="title"
-          value={formData.title}
+          value={filterJobData.title}
           placeholder="Filter by title ..."
           onChange={onChange}
         />

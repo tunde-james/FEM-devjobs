@@ -6,10 +6,10 @@ interface JobListProps {
   jobs: Job[];
 }
 
-function JobList() {
+function JobList({ jobs }: JobListProps) {
   return (
     <div className="container grid grid-cols-1 tablet:w-[689px] tablet:grid-cols-2 tablet:gap-3 desktop:w-[1110px] desktop:grid-cols-3">
-      {jobsData.map((job) => (
+      {jobs.map((job) => (
         <JobCard key={job.id} job={job} />
       ))}
     </div>

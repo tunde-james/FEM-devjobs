@@ -19,12 +19,12 @@ export interface FilterFormData {
 }
 
 interface FilterFormProps {
-  handleFilter: (data: FormData) => void;
+  handleFilter: (data: FilterFormData) => void;
   filterJobs: Job[];
 }
 
 function FilterForm({ handleFilter }: FilterFormProps) {
-  const [filterJobData, setFormData] = useState(intitialFormData);
+  const [filterJobData, setFilterFormData] = useState(intitialFormData);
 
   const isPageSmall = useMediaQuery("(max-width: 580px)");
 
@@ -32,20 +32,20 @@ function FilterForm({ handleFilter }: FilterFormProps) {
     const { name, value, type, checked } = event.target;
     const newValue = type === "checkbox" ? checked : value;
 
-    setFormData({ ...filterJobData, [name]: newValue });
+    setFilterFormData({ ...filterJobData, [name]: newValue });
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleFilter(filterJobData);
-    setFormData(intitialFormData);
+    setFilterFormData(intitialFormData);
   };
 
   return (
     <form className="mb-[57px]" onSubmit={handleSubmit}>
       {isPageSmall ? (
         <MobileFilterForm
-          formData={filterJobData}
+          filterJobData={filterJobData}
           onChange={handleChange}
           checked={filterJobData.fullTime}
         />

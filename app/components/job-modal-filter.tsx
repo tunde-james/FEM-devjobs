@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, ChangeEvent } from "react";
+import React, { useEffect, useRef, ChangeEvent } from "react";
 import Modal from "./modal";
 import Image from "next/image";
 import Input from "./ui/input";
@@ -8,16 +8,15 @@ import { FilterFormData } from "./filter-form";
 
 interface JobModalFilterProps {
   isOpen: boolean;
-  formData: FilterFormData;
+  filterJobData: FilterFormData;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
 }
 
 function JobModalFilter({
   isOpen,
-  formData,
+  filterJobData,
   onChange,
-  checked,
 }: JobModalFilterProps) {
   const focusInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -44,7 +43,7 @@ function JobModalFilter({
           <Input
             type="text"
             name="location"
-            value={formData.location}
+            value={filterJobData.location}
             onChange={onChange}
             placeholder="Filter by location ..."
           />
@@ -56,7 +55,7 @@ function JobModalFilter({
           <Input
             type="checkbox"
             name="fullTime"
-            checked={checked}
+            checked={filterJobData.fullTime}
             className="h-6 w-6"
           />
           <Label className="capitalise ml-4 font-bold">full time only</Label>
