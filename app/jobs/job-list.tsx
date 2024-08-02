@@ -1,5 +1,3 @@
-"use client";
-
 import JobCard from "./job-card";
 import jobsData from "../data.json";
 
