@@ -1,12 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import JobModalFilter from "./job-modal-filter";
 import Button from "./ui/button";
 import Image from "next/image";
 import Input from "./ui/input";
+import { FilterFormData } from "./filter-form";
 
-function MobileFilterForm() {
+export interface SmallScreenFilterFormProps {
+  formData: FilterFormData;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  checked: boolean;
+}
+
+function MobileFilterForm({ formData, onChange, checked }: SmallScreenFilterFormProps) {
   const [isJobModalFilterOpen, setJobModalFilter] = useState(false);
 
   function openJobModalFilter() {
@@ -16,9 +23,20 @@ function MobileFilterForm() {
   return (
     <div className="container -mt-8 flex h-20 w-[327px] items-center rounded-md bg-white px-6">
       <div className="flex items-center">
-        <JobModalFilter isOpen={isJobModalFilterOpen} />
+        <JobModalFilter
+          isOpen={isJobModalFilterOpen}
+          formData={formData}
+          onChange={onChange}
+          checked={checked}
+        />
 
-        <Input type="text" placeholder="Filter by title ..." />
+        <Input
+          type="text"
+          name="title"
+          value={formData.title}
+          placeholder="Filter by title ..."
+          onChange={onChange}
+        />
 
         <Image
           src="/images/icons/icon-filter.svg"

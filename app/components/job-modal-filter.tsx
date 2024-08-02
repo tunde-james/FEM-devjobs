@@ -1,30 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import Modal from "./modal";
 import Image from "next/image";
 import Input from "./ui/input";
 import Button from "./ui/button";
 import Label from "./ui/label";
+import { FilterFormData } from "./filter-form";
 
-export interface ModalFilterData {
-  text: string;
+interface JobModalFilterProps {
+  isOpen: boolean;
+  formData: FilterFormData;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
 }
 
-const initialModalFilterData: ModalFilterData = {
-  text: "",
-  checked: false,
-};
-
-interface Props {
-  isOpen: boolean;
-  onSubmit?: (data: ModalFilterData) => void;
-}
-
-function JobModalFilter({ isOpen, onSubmit }: Props) {
+function JobModalFilter({
+  isOpen,
+  formData,
+  onChange,
+  checked,
+}: JobModalFilterProps) {
   const focusInputRef = useRef<HTMLInputElement | null>(null);
-  const [formState, setFormState] = useState<ModalFilterData>(
-    initialModalFilterData,
-  );
 
   useEffect(() => {
     if (isOpen && focusInputRef.current) {
@@ -33,16 +28,6 @@ function JobModalFilter({ isOpen, onSubmit }: Props) {
       }, 0);
     }
   }, [isOpen]);
-
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ): void => {
-    const { name, value } = event.target;
-    setFormState((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen}>
@@ -56,13 +41,24 @@ function JobModalFilter({ isOpen, onSubmit }: Props) {
             className="mr-4 self-center"
           />
 
-          <Input type="text" placeholder="Filter by location ..." />
+          <Input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={onChange}
+            placeholder="Filter by location ..."
+          />
         </div>
 
         <div className="border-b border-grey-dark pt-6"></div>
 
         <div className="flex items-center pt-6">
-          <Input type="checkbox" className="h-6 w-6" />
+          <Input
+            type="checkbox"
+            name="fullTime"
+            checked={checked}
+            className="h-6 w-6"
+          />
           <Label className="capitalise ml-4 font-bold">full time only</Label>
         </div>
 

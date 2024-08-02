@@ -1,5 +1,10 @@
 import JobCard from "./job-card";
 import jobsData from "../data.json";
+import { Job } from "../types";
+
+interface JobListProps {
+  jobs: Job[];
+}
 
 function JobList() {
   return (
